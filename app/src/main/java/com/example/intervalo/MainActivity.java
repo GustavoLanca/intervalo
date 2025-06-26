@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvResultado;
 
 
+    boolean cond = false;
     int n1to25 = 0;
     int n26to50 = 0;
     int n51to75 = 0;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calc(){
-        boolean cond = false;
+
         float num = Float.parseFloat(itNum.getText().toString());
             if (num >= 1 && num <= 25) {
                 n1to25 = n1to25 + 1;
@@ -54,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
             } else if (num == 0) {
                 cond = true;
             }
-        if (cond == true) {
-            String int1 = "Resultado: Intervalo [1 - 25] = " + n1to25 + "Resultado: Intervalo [26 - 50] = " + n26to50;
-            String int2 = " Resultado: Intervalo [51 - 75] = " + n51to75 + "Resultado: Intervalo [76 - 100] = " + n76to100;
+        if (cond) {
+            String int1 = "Resultado: Intervalo [1 - 25] = " + n1to25 + " Resultado: Intervalo [26 - 50] = " + n26to50;
+            String int2 = " Resultado: Intervalo [51 - 75] = " + n51to75 + " Resultado: Intervalo [76 - 100] = " + n76to100;
             String res = int1 + int2;
             tvResultado.setText(res);
-            int n1to25 = 0;
-            int n26to50 = 0;
-            int n51to75 = 0;
-            int n76to100 = 0;
+            n1to25 = 0;
+            n26to50 = 0;
+            n51to75 = 0;
+            n76to100 = 0;
             cond = false;
         }
-
+        itNum.setText("");
     }
 
 }
