@@ -13,10 +13,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private EditText itNum;
-    private Button btnAdicionar;
+    public Button btnAdicionar;
     private TextView tvResultado;
 
-
+    String s1to25 = "Valores inseridos nesse intervalo: ";
+    String s26to50 = "Valores inseridos nesse intervalo: ";
+    String s51to75 = "Valores inseridos nesse intervalo: ";
+    String s76to100 = "Valores inseridos nesse intervalo: ";
     boolean cond = false;
     int n1to25 = 0;
     int n26to50 = 0;
@@ -46,25 +49,35 @@ public class MainActivity extends AppCompatActivity {
         float num = Float.parseFloat(itNum.getText().toString());
             if (num >= 1 && num <= 25) {
                 n1to25 = n1to25 + 1;
+                s1to25 = s1to25 + "; " + num;
             } else if (num >= 26 && num <= 50) {
                 n26to50 = n26to50 + 1;
+                s26to50 = s26to50 + "; " + num;
             } else if (num >= 51 && num <= 75) {
                 n51to75 = n51to75 + 1;
+                s51to75 = s51to75 + "; " + num;
             } else if (num >= 76 && num <= 100) {
                 n76to100 = n76to100 + 1;
+                s76to100 = s76to100 + "; " + num;
             } else if (num == 0) {
                 cond = true;
             }
         if (cond) {
-            String int1 = "Resultado: Intervalo [1 - 25] = " + n1to25 + " Resultado: Intervalo [26 - 50] = " + n26to50;
-            String int2 = " Resultado: Intervalo [51 - 75] = " + n51to75 + " Resultado: Intervalo [76 - 100] = " + n76to100;
-            String res = int1 + int2;
+            String s1 = "Resultado: Intervalo [1 - 25] = " + n1to25 + "\n " + s1to25;
+            String s2 = "\nResultado: Intervalo [26 - 50] = " + n26to50 + "\n " + s26to50;
+            String s3 = "\nResultado: Intervalo [51 - 75] = " + n51to75 + "\n " + s51to75;
+            String s4 = "\nResultado: Intervalo [76 - 100] = " + n76to100 + "\n " + s76to100;
+            String res = s1 + s2 + s3 + s4;
             tvResultado.setText(res);
             n1to25 = 0;
             n26to50 = 0;
             n51to75 = 0;
             n76to100 = 0;
             cond = false;
+            s1to25 = "Valores inseridos nesse intervalo: ";
+            s26to50 = "Valores inseridos nesse intervalo: ";
+            s51to75 = "Valores inseridos nesse intervalo: ";
+            s76to100 = "Valores inseridos nesse intervalo: ";
         }
         itNum.setText("");
     }

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">intervalo</string>
     <string name="lbl1">Insira um número abaixo:</string>
-    <string name="btnAdicionar">Adicionar:</string>
-    <string name="itNum">Insira um número:</string>
+    <string name="btnAdicionar">Adicionar</string>
+    <string name="itNum">Insira um número</string>
+    <string name="tvResultado">Resultado:</string>
 
 </resources>
